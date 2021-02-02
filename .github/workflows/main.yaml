@@ -22,4 +22,4 @@ jobs:
           secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: us-east-1
           local-image: telestax-rest-api:${{ github.sha }}
-          image: registry-rest-api-telestax-test-task/telestax-rest-api:${{ github.sha }}
+          image: registry-rest-api-telestax-test-task
