@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      - run: mvn clean install
       - run: docker build --tag telestax-rest-api:${{ github.sha }} .
       - name: Push to ECR
         id: ecr
