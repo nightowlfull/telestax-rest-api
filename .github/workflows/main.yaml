@@ -34,4 +34,4 @@ jobs:
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          command: helm upgrade --install rest-api-chart ./k8s/rest-api-chart/ --values ./k8s/rest-api-chart/values.yaml --set image.tag=${{ github.sha }}
+          command: helm upgrade --install rest-api-chart ./k8s/rest-api/rest-api-chart/ --values ./k8s/rest-api/rest-api-chart/values.yaml --set image.tag=${{ github.sha }}
