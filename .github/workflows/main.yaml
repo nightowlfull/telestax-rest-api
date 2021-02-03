@@ -22,7 +22,7 @@ jobs:
           secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: us-east-1
           local-image: telestax-rest-api:${{ github.sha }}
-          image: "${{ secrets.ECR_REGISTRY }}/telestax-rest-api:${{ github.sha }}"
+          image: ${{ secrets.ECR_REGISTRY }}
       - name: Deploy to EKS
         uses: koslibpro/helm-eks-action@master
         env:
