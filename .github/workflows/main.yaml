@@ -22,7 +22,7 @@ jobs:
           secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: us-east-1
           local-image: telestax-rest-api:${{ github.sha }}
-          image: ${{ secrets.ECR_REGISTRY }}
+          image: "${{ secrets.ECR_REGISTRY }}:${{ github.sha }}"
       - name: Set AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
