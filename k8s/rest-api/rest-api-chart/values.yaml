@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: 311213860184.dkr.ecr.us-west-1.amazonaws.com/registry-rest-api-telestax-test-task
-  tag: latest
+  tag: 46a0355
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -32,7 +32,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
+  type: NodePort
   port: 80
   targetPort: 8080
 
