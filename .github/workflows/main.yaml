@@ -2,13 +2,13 @@ name: CI
 
 on:
   push:
-    branches: [ development ]
+    branches: [ master ]
 
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -42,7 +42,7 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
     needs: [build]
     steps:
       - name: Checkout code
