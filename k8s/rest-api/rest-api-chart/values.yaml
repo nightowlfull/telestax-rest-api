@@ -4,6 +4,7 @@
 
 replicaCount: 1
 
+# Default parameters for the image
 image:
   repository: 311213860184.dkr.ecr.us-west-1.amazonaws.com/registry-rest-api-telestax-test-task
   tag: 46a0355
@@ -31,11 +32,13 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+# Configuration for the service being used for the API
 service:
   type: NodePort
   port: 80
   targetPort: 8080
 
+# Configuration for the Ingress resource
 ingress:
   name: rest-api-chart
   annotations:
